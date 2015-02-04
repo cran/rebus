@@ -1,6 +1,6 @@
-5a1d153789f548507fa1cb1b883eb867 *DESCRIPTION
+6287d2e21b28ca3cf08ca412c72f04ba *DESCRIPTION
 35e77e9eee698f94431d417683fdb196 *NAMESPACE
-bc62005cc8b5efb3bcad3bdf3cd699e2 *NEWS
+8b7335b845a70cd3fc0d7bb004064e3a *NEWS
 832d63fdaed84568c36f190ecc8a2e3b *R/alternation.R
 6722b4f22330b1497b5f565028fa00fc *R/backreferences.R
 3c552c79d4baecd107ce08cd27917436 *R/capture.R
@@ -14,13 +14,14 @@ a8af6e50ff46f5d9de8e9765b4c65e77 *R/datetime.R
 daf849b27eb1f251d9b9fb227f873361 *R/internal.R
 7cb32a79a2d162ed4d4040a9242e4521 *R/lookaround.R
 4ccfc8fd199abe9ffe4d80f8a774036b *R/misc.R
-86211de709de82baaf12094486fd0bdf *R/number_range.R
+12e05158d4da39685432e03eede6cf56 *R/number_range.R
 a24330c969bf9292e7cb67003f2ce934 *R/regex-methods.R
 69aa89c86a734f5aaf6f88849b5046ce *R/regex-package.R
 958a2314a1531d47593e994cd46ff17b *R/unicode-groups.R
 21f18d37042ecaaa0401de106b913952 *R/unicode.R
 92108eb6475287b8883f08f590ff5b41 *R/zzz.R
 16636027d4c1de47b43c4a525dd5c6ec *README.md
+ae12ff6b20237bc3c2c30455db47cc9e *inst/tests/test-number_range.R
 275ee3a656c174221884c3a87fbc89dc *inst/tests/test-repeated.R
 6c620171c9487b4db150606e5e643e37 *man/Anchors.Rd
 885a04ad7057af222e3625b53046c4ad *man/Backreferences.Rd
@@ -40,7 +41,7 @@ b868b5e7efc0d3e12651f0041f69fd0e *man/as.regex.Rd
 8fc46ae2c452ebe979519a35855b47e0 *man/get_weekdays.Rd
 c0d84079c57b75f6e6c5dd2f7eedf0ff *man/literal.Rd
 6464ad6d341be315ed42b73bea2567f0 *man/lookahead.Rd
-f568fb9ad1eb4dd959b17a923e1fcf42 *man/number_range.Rd
+35fc5d540ad386cbc5dd65c7716e0ee0 *man/number_range.Rd
 7fd3a6d72a0d05663b51e1298e58f49d *man/or.Rd
 8b13733d71a932e04ab7396573442301 *man/recursive.Rd
 79b9f7df60bad756a47252be21697601 *man/recycle.Rd

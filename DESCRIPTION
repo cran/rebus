@@ -1,8 +1,8 @@
 Package: rebus
 Type: Package
 Title: Build Regular Expressions in a Human Readable Way
-Version: 0.0-4
-Date: 2015-01-20
+Version: 0.0-5
+Date: 2015-02-04
 Author: Richard Cotton [aut, cre]
 Maintainer: Richard Cotton <richierocks@gmail.com>
 Authors@R: person("Richard", "Cotton", role = c("aut", "cre"), email =
@@ -24,7 +24,7 @@ Collate: 'alternation.R' 'regex-methods.R' 'backreferences.R'
         'compound-constants.R' 'escape_special.R' 'datetime.R'
         'lookaround.R' 'misc.R' 'number_range.R' 'regex-package.R'
         'unicode-groups.R' 'unicode.R' 'zzz.R'
-Packaged: 2015-01-20 13:49:39 UTC; rjc2003
+Packaged: 2015-02-04 11:13:26 UTC; rjc2003
 NeedsCompilation: no
 Repository: CRAN
-Date/Publication: 2015-01-22 00:46:57
+Date/Publication: 2015-02-04 13:14:05

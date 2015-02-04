@@ -7,6 +7,8 @@
 #' bulk the match up to the length of the number with the most digits?
 #' @param capture A logical value. See \code{\link{or}} for details.
 #' @return A character vector representing part or all of a regular expression.
+#' @references There's a similar online utility for this at
+#' \url{http://utilitymill.com/utility/Regex_For_Range}
 #' @examples
 #' number_range(0, 255)
 #' number_range(0, 255, allow_leading_zeroes = TRUE)
@@ -75,10 +77,10 @@ get_alternate_ranges <- function(d, allow_leading_zeroes)
   }
   grp <- factor(
     ifelse(
-      d[, 1] == min(d[, 1]) & d[1, 1] != "0",
+      d[, 1] == min(d[, 1]) & (!all(d[1, -1] %in% c("", "0"))),
       "min",
       ifelse(
-        d[, 1] == max(d[, 1]) & d[nrow(d), 1] < "9",
+        d[, 1] == max(d[, 1]) & any(d[nrow(d), -1] != "9"),
         "max",
         "middle"
       )
@@ -96,7 +98,7 @@ get_alternate_ranges <- function(d, allow_leading_zeroes)
           optional(0)
         } else
         {
-          ""
+          min[1, 1]
         }
         prefix %R% 
           get_alternate_ranges(min[, -1, drop = FALSE], allow_leading_zeroes)
@@ -106,7 +108,8 @@ get_alternate_ranges <- function(d, allow_leading_zeroes)
       },
       if(nrow(middle) > 0)
       {
-        char_range(middle[1, 1], middle[nrow(middle), 1]) %R% 
+        m <- if(middle[1, 1] == "") "0" else middle[1, 1]
+        char_range(m, middle[nrow(middle), 1]) %R% 
           ascii_digit(ncol(d) - 1, ncol(d) - 1)
       } else 
       {
@@ -132,7 +135,7 @@ simplify_repeated_digits <- function(x)
     warning("Only using the first element of x.")
     x <- x[1]
   }
-  rx <- "(\\[0-9\\]){2,}"
+  rx <- "(\\Q[0-9]\\E){2,}"
   repeat
   {   
     m <- regexpr(rx, x)
@@ -140,6 +143,21 @@ simplify_repeated_digits <- function(x)
     match_len <- attr(m, "match.length")
     n <- match_len / 5
     x <- paste0(substring(x, 1, m - 1), ascii_digit(n), substring(x, m + match_len))
+  }
+  rx <- "\\Q[0-9]\\E(\\{[0-9]\\}){2}"
+  repeat
+  {   
+    m <- regexpr(rx, x)
+    if(m == -1) break
+    match_len <- attr(m, "match.length")
+    n <- (match_len - 5) / 3
+    x <- paste0(
+      substring(x, 1, m - 1), 
+      "[0-9]{",
+      as.integer(substring(x, m + 6, m + 6)) + as.integer(substring(x, m + 9, m + 9)) - 1,
+      "}",
+      substring(x, m + match_len)
+    )
   }
   x
 }

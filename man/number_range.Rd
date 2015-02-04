@@ -31,4 +31,8 @@ number_range(-77, 77)
 number_range(-77, 77, capture = TRUE)
 number_range(-77, 77, capture = NA)
 }
+\references{
+There's a similar online utility for this at
+\url{http://utilitymill.com/utility/Regex_For_Range}
+}
 
