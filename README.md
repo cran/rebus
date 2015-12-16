@@ -1,3 +1,7 @@
+[![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/0.1.0/active.svg)](http://www.repostatus.org/#active)
+[![Is the package on CRAN?](http://www.r-pkg.org/badges/version/rebus)](http://www.r-pkg.org/pkg/rebus)
+[![Build Status](https://semaphoreci.com/api/v1/projects/b2bc4ad6-9e0e-49e6-b6ca-cb3ceec56180/636923/badge.svg)](https://semaphoreci.com/richierocks/rebus)
+
 # rebus: Regular Expression Builder, Um, Something
 
 ## Build regular expressions in a human readable way
@@ -20,29 +24,29 @@ capturing and all the basic regex functionality (`char_class`, `repeated`,
 Each of the class constants has a corresponding function that groups the class
 and allows repetition (`alnum(3, 5)`).
 
-There are operators for concatenation (`%c%`) and alternation (`%|%`).
+There are operators for concatenation (`%R%` or `%c%`) and alternation (`%|%`).
 
 ## Examples
 
 ### Match a hex colour, like `"#99af01"`
 This reads *Match a hash, followed by six hexadecimal values.*
 
-    "#" %c% hex_digit(6)    
+    "#" %R% hex_digit(6)    
 
 To match only a hex colour and nothing else, you can add anchors to the 
 start and end of the expression.
 
-    START %c% "#" %c% hex_digit(6) %c% END
+    START %R% "#" %R% hex_digit(6) %R% END
 
 ### Simple email address matching. 
 This reads *Match one or more letters, numbers, dots, underscores, percents, 
 plusses or hyphens. Then match an 'at' symbol. Then match one or more letters, 
 numbers, dots, or hyphens. Then match a dot. Then match two to four letters.*
 
-    one_or_more(char_class(ASCII_ALNUM %c% "._%+-")) %c%
-      "@" %c%
-      one_or_more(char_class(ASCII_ALNUM %c% ".-")) %c%
-      DOT %c%
+    one_or_more(char_class(ASCII_ALNUM %R% "._%+-")) %R%
+      "@" %R%
+      one_or_more(char_class(ASCII_ALNUM %R% ".-")) %R%
+      DOT %R%
       ascii_alpha(2, 4)
 
 ### IP address matching. 
@@ -54,16 +58,16 @@ digit.  Make this a single token, but don't capture it.*
 
     # Using the %|% operator
     ip_element <- group(
-      "25" %c% char_range(0, 5) %|%
-      "2" %c% char_range(0, 4) %c% ascii_digit() %|%
-      optional(char_class("01")) %c% optional(ascii_digit()) %c% ascii_digit()
+      "25" %R% char_range(0, 5) %|%
+      "2" %R% char_range(0, 4) %R% ascii_digit() %|%
+      optional(char_class("01")) %R% optional(ascii_digit()) %R% ascii_digit()
     )
         
     # The same again, this time using the or function
     ip_element <- or(
-      "25" %c% char_range(0, 5),
-      "2" %c% char_range(0, 4) %c% ascii_digit(),
-      optional(char_class("01")) %c% optional(ascii_digit()) %c% ascii_digit()
+      "25" %R% char_range(0, 5),
+      "2" %R% char_range(0, 4) %R% ascii_digit(),
+      optional(char_class("01")) %R% optional(ascii_digit()) %R% ascii_digit()
     )
 
     # It's easier to write using number_range, though it isn't quite as optimal 
@@ -75,19 +79,31 @@ reads *Match a word boundary. Then create a token from an `ip_element`
 followed by a dot, and repeat it three times.  Then match another `ip_element`
 followed by a word boundary.*
 
-    BOUNDARY %c% 
-      repeated(group(ip_element %c% DOT), 3) %c% 
-      ip_element %c%
+    BOUNDARY %R% 
+      repeated(group(ip_element %R% DOT), 3) %R% 
+      ip_element %R%
       BOUNDARY
 
 ## See also
 
-The `stringr` and `stringi` packages provide tools for matching regular 
-expressions and nicely complement this package.
+The [`stringr`](https://github.com/hadley/stringr/) and 
+[`stringi`](https://github.com/Rexamine/stringi) packages provide tools for 
+matching regular expressions and nicely complement this package.
 
-http://www.regular-expressions.info has good advice on using
-regular expression in R.  In particular, see 
-http://www.regular-expressions.info/rlanguage.html and
-http://www.regular-expressions.info/examples.html.
+The [`rex`](https://github.com/kevinushey/rex) and 
+[`Regularity`](https://github.com/martineastwood/Regularity) packages are very 
+similar to this package.
 
-https://www.debuggex.com is a visual regex debugging and testing site.
+[regular-expressions.info](http://www.regular-expressions.info) has good advice 
+on using regular expression in R.  In particular, see the 
+[R language page](http://www.regular-expressions.info/rlanguage.html) and the 
+[examples page](http://www.regular-expressions.info/examples.html).
+
+[debuggex.com](https://www.debuggex.com) is a visual regex debugging and testing 
+site.
+
+## TODO
+
+More high-level regexes for complex data types (phone numbers, post codes,
+car licenses, whatever).
+
