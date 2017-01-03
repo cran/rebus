@@ -4,6 +4,7 @@
 \alias{capture}
 \alias{engroup}
 \alias{group}
+\alias{token}
 \title{Capture a token, or not}
 \description{
 See \code{\link[rebus.base]{capture}}.

@@ -3,6 +3,7 @@
 \name{SpecialCharacters}
 \alias{BACKSLASH}
 \alias{CARET}
+\alias{CLOSE_BRACKET}
 \alias{CLOSE_PAREN}
 \alias{DOLLAR}
 \alias{DOT}

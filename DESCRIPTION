@@ -1,8 +1,8 @@
 Package: rebus
 Type: Package
 Title: Build Regular Expressions in a Human Readable Way
-Version: 0.1-0
-Date: 2015-12-16
+Version: 0.1-2
+Date: 2017-01-02
 Author: Richard Cotton [aut, cre]
 Maintainer: Richard Cotton <richierocks@gmail.com>
 Authors@R: person("Richard", "Cotton", role = c("aut", "cre"), email =
@@ -11,7 +11,8 @@ Description: Build regular expressions piece by piece using human readable code.
     This package is designed for interactive use.  For package development, use
     the rebus.* dependencies.
 Depends: R (>= 3.1.0)
-Imports: rebus.base, rebus.datetimes, rebus.numbers, rebus.unicode
+Imports: rebus.base (>= 0.0-2), rebus.datetimes, rebus.numbers,
+        rebus.unicode (>= 0.0-2)
 Suggests: testthat
 License: Unlimited
 LazyLoad: yes
@@ -25,6 +26,6 @@ RoxygenNote: 5.0.1
 Collate: 'export-base.R' 'export-datetimes.R' 'export-numbers.R'
         'export-unicode.R' 'imports.R' 'regex-package.R'
 NeedsCompilation: no
-Packaged: 2015-12-16 12:30:25 UTC; rjc2003
+Packaged: 2017-01-03 14:34:07 UTC; richierocks
 Repository: CRAN
-Date/Publication: 2015-12-16 15:10:57
+Date/Publication: 2017-01-03 16:25:54
