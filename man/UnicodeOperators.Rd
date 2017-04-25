@@ -10,4 +10,3 @@
 \description{
 See \code{\link[rebus.unicode]{UnicodeOperators}}.
 }
-

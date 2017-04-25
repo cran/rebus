@@ -4,10 +4,9 @@
 \alias{IsoClasses}
 \alias{IsoDateTime}
 \alias{iso_date}
-\alias{iso_datetime}
 \alias{iso_time}
+\alias{iso_datetime}
 \title{ISO 8601 date-time classes}
 \description{
 See \code{\link[rebus.datetimes]{IsoClasses}}.
 }
-

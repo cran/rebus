@@ -2,15 +2,6 @@
 % Please edit documentation in R/export-base.R
 \name{Backreferences}
 \alias{Backreferences}
-\alias{ICU_REF1}
-\alias{ICU_REF2}
-\alias{ICU_REF3}
-\alias{ICU_REF4}
-\alias{ICU_REF5}
-\alias{ICU_REF6}
-\alias{ICU_REF7}
-\alias{ICU_REF8}
-\alias{ICU_REF9}
 \alias{REF1}
 \alias{REF2}
 \alias{REF3}
@@ -20,8 +11,16 @@
 \alias{REF7}
 \alias{REF8}
 \alias{REF9}
+\alias{ICU_REF1}
+\alias{ICU_REF2}
+\alias{ICU_REF3}
+\alias{ICU_REF4}
+\alias{ICU_REF5}
+\alias{ICU_REF6}
+\alias{ICU_REF7}
+\alias{ICU_REF8}
+\alias{ICU_REF9}
 \title{Backreferences}
 \description{
 See \code{\link[rebus.base]{Backreferences}}.
 }
-

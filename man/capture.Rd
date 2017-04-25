@@ -2,11 +2,10 @@
 % Please edit documentation in R/export-base.R
 \name{capture}
 \alias{capture}
-\alias{engroup}
 \alias{group}
+\alias{engroup}
 \alias{token}
 \title{Capture a token, or not}
 \description{
 See \code{\link[rebus.base]{capture}}.
 }
-

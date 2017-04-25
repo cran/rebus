@@ -2,10 +2,9 @@
 % Please edit documentation in R/export-base.R
 \name{char_class}
 \alias{char_class}
-\alias{negate_and_group}
 \alias{negated_char_class}
+\alias{negate_and_group}
 \title{A range or char_class of characters}
 \description{
 See \code{\link[rebus.base]{char_class}}.
 }
-

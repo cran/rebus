@@ -4,6 +4,7 @@
 \name{rebus}
 \alias{rebus}
 \alias{rebus-package}
+\alias{rebus-package}
 \title{rebus: Regular Expression Builder, Um, Something}
 \description{
 Build regular expressions in a human readable way.
@@ -71,9 +72,6 @@ BOUNDARY \%R\%
   ip_element \%R\%
   BOUNDARY    
 }
-\author{
-Richard Cotton \email{richierocks@gmail.com}
-}
 \seealso{
 \code{\link[base]{regex}} and \code{\link[base]{regexpr}}
 The `stringr` and `stringi` packages provide tools for matching 
@@ -84,4 +82,6 @@ regular expression in R.  In particular, see
 \url{http://www.regular-expressions.info/examples.html}
 \url{https://www.debuggex.com} is a visual regex debugging and testing site.
 }
-
+\author{
+Richard Cotton \email{richierocks@gmail.com}
+}

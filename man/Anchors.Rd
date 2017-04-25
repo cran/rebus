@@ -2,10 +2,9 @@
 % Please edit documentation in R/export-base.R
 \name{Anchors}
 \alias{Anchors}
-\alias{END}
 \alias{START}
+\alias{END}
 \title{The start or end of a string}
 \description{
 See \code{\link[rebus.base]{Anchors}}.
 }
-

@@ -8,4 +8,3 @@
 \description{
 See \code{\link[rebus.base]{Concatenation}}.
 }
-

@@ -7,4 +7,3 @@
 \description{
 See \code{\link[rebus.base]{format.regex}}.
 }
-

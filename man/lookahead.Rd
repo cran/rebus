@@ -2,11 +2,10 @@
 % Please edit documentation in R/export-base.R
 \name{lookahead}
 \alias{lookahead}
-\alias{lookbehind}
 \alias{negative_lookahead}
+\alias{lookbehind}
 \alias{negative_lookbehind}
 \title{Lookaround}
 \description{
 See \code{\link[rebus.base]{lookahead}}.
 }
-
